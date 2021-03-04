@@ -11,7 +11,8 @@ BEGIN {
     $tempfile = Path::Tiny->tempfile;
 }
 
-package MyClass {
+{
+    package MyClass;
     use Log::Any '$log';
     use Log::Any::Adapter 'JSON', $tempfile->opena;
 
@@ -24,7 +25,7 @@ package MyClass {
     }
 
     1;
-};
+}
 
 # last line logged
 sub last_line {

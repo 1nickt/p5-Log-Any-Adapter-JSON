@@ -8,6 +8,7 @@ my $tempfile;
 my $cat_pipe;
 
 BEGIN {
+    plan skip_all => 'This test requires cat' if $^O eq 'MSWin32';
     use Path::Tiny;
     $tempfile = Path::Tiny->tempfile;
     open($cat_pipe, '|-', "cat -n >> $tempfile") or die "Died: Could not open pipe: $@";
