@@ -316,6 +316,8 @@ Output is a B<single line> with JSON like:
     "tracker":42
   }
 
+Another example:
+
   $log->debug('the message', { tracker => 42 }, {foo => 'bar'}, [1..3]);
 
 Output is a B<single line> with JSON like:
