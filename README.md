@@ -113,6 +113,14 @@ Output is a **single string** with JSON like:
       "tracker":42
     }
 
+Reserved key names that may not be used in the first hashref include:
+
+    * category
+    * context
+    * level
+    * message
+    * time
+
 ## Additional hashrefs and arrayrefs
 
     $log->debug('the message', { tracker => 42 }, { foo => 'bar'});
