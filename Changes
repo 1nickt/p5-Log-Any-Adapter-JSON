@@ -2,6 +2,8 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+  - Update README
+
 1.03      2021-03-03 20:15:46-05:00 America/New_York
 
   - Documentation updates

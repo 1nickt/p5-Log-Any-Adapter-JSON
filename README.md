@@ -125,7 +125,7 @@ Reserved key names that may not be used in the first hashref include:
 
     $log->debug('the message', { tracker => 42 }, { foo => 'bar'});
 
-Output is a **single string** with JSON like:
+Output is a **single line** with JSON like:
 
     {
       "category":"main",
@@ -138,9 +138,11 @@ Output is a **single string** with JSON like:
       "tracker":42
     }
 
+Another example:
+
     $log->debug('the message', { tracker => 42 }, {foo => 'bar'}, [1..3]);
 
-Output is a **single string** with JSON like:
+Output is a **single line** with JSON like:
 
     {
       "category":"main",
@@ -159,22 +161,22 @@ Output is a **single string** with JSON like:
 ## Additional messages
 
 Any scalars that are passed that are not consumed as the values of formatting
-tokens will be included in an `additonal_messages` key.
+tokens will be included in an `additional_messages` key.
 
     $log->debug('a simple message', 'foo', 'bar');
 
-Output is a **single string** with JSON like:
+Output is a **single line** with JSON like:
 
-{
-  "additional\_messages":\[
-    'foo',
-    'bar'
-  \],
-  "category":"main",
-  "level":"debug",
-  "message":"hello, world",
-  "time":"2021-03-03T17:23:25.73124"
-}
+    {
+      "additional_messages":[
+        'foo',
+        'bar'
+      ],
+      "category":"main",
+      "level":"debug",
+      "message":"hello, world",
+      "time":"2021-03-03T17:23:25.73124"
+    }
 
 # SEE ALSO
 
