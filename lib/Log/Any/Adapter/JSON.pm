@@ -303,7 +303,7 @@ Reserved key names that may not be used in the first hashref include:
 
   $log->debug('the message', { tracker => 42 }, { foo => 'bar'});
 
-Output is a B<single string> with JSON like:
+Output is a B<single line> with JSON like:
 
   {
     "category":"main",
@@ -318,7 +318,7 @@ Output is a B<single string> with JSON like:
 
   $log->debug('the message', { tracker => 42 }, {foo => 'bar'}, [1..3]);
 
-Output is a B<single string> with JSON like:
+Output is a B<single line> with JSON like:
 
   {
     "category":"main",
@@ -337,11 +337,11 @@ Output is a B<single string> with JSON like:
 =head2 Additional messages
 
 Any scalars that are passed that are not consumed as the values of formatting
-tokens will be included in an C<additonal_messages> key.
+tokens will be included in an C<additional_messages> key.
 
   $log->debug('a simple message', 'foo', 'bar');
 
-Output is a B<single string> with JSON like:
+Output is a B<single line> with JSON like:
 
 {
   "additional_messages":[
@@ -361,9 +361,5 @@ L<Log::Any>
 L<Log::Any::Adapter>
 
 =cut
-
-
-
-
 
 
