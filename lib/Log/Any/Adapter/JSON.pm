@@ -345,16 +345,16 @@ tokens will be included in an C<additional_messages> key.
 
 Output is a B<single line> with JSON like:
 
-{
-  "additional_messages":[
-    'foo',
-    'bar'
-  ],
-  "category":"main",
-  "level":"debug",
-  "message":"hello, world",
-  "time":"2021-03-03T17:23:25.73124"
-}
+  {
+    "additional_messages":[
+      'foo',
+      'bar'
+    ],
+    "category":"main",
+    "level":"debug",
+    "message":"hello, world",
+    "time":"2021-03-03T17:23:25.73124"
+  }
 
 =head1 SEE ALSO
 
