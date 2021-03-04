@@ -281,7 +281,7 @@ The first hashref encountered has its keys elevated to the top level.
 
   $log->debug('the message', { tracker => 42 });
 
-Output is a B<single string> with JSON like:
+Output is a B<single line> with JSON like:
 
     {
       "category":"main",
