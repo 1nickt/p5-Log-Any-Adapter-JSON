@@ -93,6 +93,11 @@ sub _prepare_log_entry {
     for my $item ( @items ) {
 
         if ( ref($item) eq 'HASH' ) {
+            # special handling for Log::Any's context hash
+            if ( $item->{context} ) {
+                $log_entry{context} = delete $item->{context};
+            }
+
             if ( ! $seen_href ) {
                 for my $key ( keys %{ $item } ) {
                     if ( $key =~ /^(?:time|level|category|message)$/ ) {
@@ -285,6 +290,14 @@ Output is a B<single string> with JSON like:
       "time":"2021-03-03T17:23:25.73124",
       "tracker":42
     }
+
+Reserved key names that may not be used in the first hashref include:
+
+  * category
+  * context
+  * level
+  * message
+  * time
 
 =head2 Additional hashrefs and arrayrefs
 
