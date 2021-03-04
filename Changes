@@ -2,6 +2,8 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+1.01      2021-03-03 19:23:57-05:00 America/New_York
+
   - Add support for Log::Any's context hash
   
 1.00      2021-03-03 18:38:00-05:00 America/New_York
