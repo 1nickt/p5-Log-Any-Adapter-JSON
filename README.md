@@ -72,7 +72,7 @@ In addition, the log entry will have the following fields:
 
     $log->debug('a simple message');
 
-Output is a **single string** with JSON like:
+Output is a **single line** with JSON like:
 
     {
       "category":"main",
@@ -88,7 +88,7 @@ Output is a **single string** with JSON like:
 
     $log->debug('a formatted %s with %d tokens', $val, $num);
 
-Output is a **single string** with JSON like:
+Output is a **single line** with JSON like:
 
     {
       "category":"main",
@@ -103,7 +103,7 @@ The first hashref encountered has its keys elevated to the top level.
 
     $log->debug('the message', { tracker => 42 });
 
-Output is a **single string** with JSON like:
+Output is a **single line** with JSON like:
 
     {
       "category":"main",

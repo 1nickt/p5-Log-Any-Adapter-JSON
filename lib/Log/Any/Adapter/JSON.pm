@@ -250,7 +250,7 @@ In addition, the log entry will have the following fields:
 
   $log->debug('a simple message');
 
-Output is a B<single string> with JSON like:
+Output is a B<single line> with JSON like:
 
   {
     "category":"main",
@@ -266,7 +266,7 @@ Output is a B<single string> with JSON like:
 
   $log->debug('a formatted %s with %d tokens', $val, $num);
 
-Output is a B<single string> with JSON like:
+Output is a B<single line> with JSON like:
 
   {
     "category":"main",
