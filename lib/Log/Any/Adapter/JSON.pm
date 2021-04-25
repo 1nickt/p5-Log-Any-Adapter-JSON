@@ -41,6 +41,7 @@ sub new {
 
     $args{handle}      = $handle;
     $args{log_level} //= $trace_level;
+    $args{format_message} //= 1;
 
     return $class->SUPER::new(%args);
 }
@@ -51,7 +52,7 @@ sub structured {
 
     return if Log::Any::Adapter::Util::numeric_level($level) > $self->{log_level};
 
-    my $log_entry = _prepare_log_entry(@_);
+    my $log_entry = _prepare_log_entry($self, @_);
 
     select $self->{handle};
     say $log_entry;
@@ -59,7 +60,7 @@ sub structured {
 }
 
 sub _prepare_log_entry {
-    my ($level, $category, $string, @items) = @_;
+    my ($self, $level, $category, $string, @items) = @_;
 
     confess 'Died: A log message is required' if ! $string;
 
@@ -70,9 +71,7 @@ sub _prepare_log_entry {
     );
 
     # Process pattern and values if present
-    my $num_tokens =()= $string =~ m/%s|%d/g;
-
-    if ( $num_tokens ) {
+    if ($self->{format_message} && (my $num_tokens =()= $string =~ m/%s|%d/g) ) {
         my @vals = grep { ! ref } splice @items, 0, $num_tokens;
 
         if ( @vals < $num_tokens ) {
@@ -205,6 +204,26 @@ handle to which the entries will be printed.
 
 Optionally you may pass an C<encoding> argument which will be used to apply
 a C<binmode> layer to the output handle. The default encoding is C<UTF-8>.
+
+=head1 PARAMETERS
+ 
+=head2 log_level
+
+Set the ninimum logging level to output. Any messages lower than this level
+will be discarded. Default is trace.
+
+    use Log::Any::Adapter ('JSON', \*STDERR, log_level => 'info');
+
+=head2 format_message
+
+Whether the message should be formatted using sprintf if it contains
+formatting codes such as '%s'. This is enabled by default, but will
+cause the program to die if a message does not contain enough arguments
+to process all the formatting codes in a message. To prevent log messages
+from dependencies or untrusted sources from accidentally crashing the
+program, you might want to disable message formatting if you don't need it:
+
+    use Log::Any::Adapter ('JSON', \*STDERR, format_message => 0);
 
 =head1 OUTPUT
 
