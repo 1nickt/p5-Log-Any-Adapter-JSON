@@ -2,6 +2,8 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+1.09      2021-05-01 10:19:44-04:00 America/New_York
+
   - Allow disabling message string formatting
     Thanks Dan Michael O. Heggø!
 
