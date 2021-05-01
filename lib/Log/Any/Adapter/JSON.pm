@@ -63,10 +63,15 @@ sub _prepare_log_entry {
 
     confess 'Died: A log message is required' if ! $string;
 
-    my $meth = $self->{localtime} ? 'now' : 'now_utc';
+    my $method = $self->{localtime} ? 'now' : 'now_utc';
+
+    my $time  = Time::Moment->$method;
+    my $float = $time->strftime('%f');
+    $float ||= '.';
+    $float .= 0 while length $float < 7;
 
     my %log_entry = (
-        time     => Time::Moment->$meth->strftime('%FT%T%6f%Z'),
+        time     => join('', $time->strftime('%FT%T'), $float, $time->strftime('%Z')),
         level    => $level,
         category => $category,
     );
