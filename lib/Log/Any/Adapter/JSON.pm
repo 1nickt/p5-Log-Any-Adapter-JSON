@@ -1,6 +1,6 @@
 package Log::Any::Adapter::JSON;
 
-our $VERSION = '1.11';
+our $VERSION = '1.12';
 
 use strict;
 use warnings;
