@@ -2,6 +2,8 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+1.10      2021-05-01 17:34:22-04:00 America/New_York
+
   - Pad timestamp with 0s on RHS so it's always of same length
   
 1.09      2021-05-01 10:19:44-04:00 America/New_York
