@@ -224,7 +224,7 @@ will be discarded. Default is trace.
 
 =head2 encoding
 
-Defaults to C<UTF-8>. Pass a different encoding to change the bindmode applied
+Defaults to C<UTF-8>. Pass a different encoding to change the binmode applied
 to the log output.
 
 =head2 localtime
@@ -352,9 +352,9 @@ Output is a B<single line> with JSON like:
 
   {
     "category":"main",
-    "hash_data":{
-      "foo":"bar"
-    },
+    "hash_data":[
+      {"foo":"bar"}
+    ],
     "level":"debug",
     "message":"the message",
     "time":"2021-03-03T17:23:25.731243Z",

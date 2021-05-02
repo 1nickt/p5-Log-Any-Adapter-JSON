@@ -2,10 +2,12 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+  - Minor doc fixes
+
 1.11      2021-05-01 18:50:11-04:00 America/New_York
 
-  - Uodate prereqs for Kwalitee
-  
+  - Update prereqs for Kwalitee
+
 1.10      2021-05-01 17:34:22-04:00 America/New_York
 
   - Pad timestamp with 0s on RHS so it's always of same length
