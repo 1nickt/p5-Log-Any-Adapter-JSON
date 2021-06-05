@@ -1,8 +1,8 @@
 Changes file for Log::Any::Adapter::JSON
 
-{{$NEXT}}
-
 - Use allow_stringify option to serializer to support scalar refs (eg from logging SQL commands)
+
+{{$NEXT}}
 
 1.12      2021-05-02 08:04:20-04:00 America/New_York
 
