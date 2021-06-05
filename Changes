@@ -2,6 +2,8 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+  - Switch to Cpanel::JSON::XS for speed and for allow_stringify
+  
 1.13      2021-06-05 14:07:21-04:00 America/New_York
 
   - Use allow_stringify option to serializer to support scalar refs (eg from logging SQL commands)
