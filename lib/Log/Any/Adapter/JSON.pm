@@ -7,7 +7,7 @@ use warnings;
 use feature 'say';
 
 use Carp qw/ croak confess /;
-use JSON::MaybeXS;
+use Cpanel::JSON::XS;
 use Path::Tiny;
 use Time::Moment;
 use strictures 2;
@@ -128,13 +128,12 @@ sub _prepare_log_entry {
         }
     }
 
-    my $serializer = JSON::MaybeXS->new(
-        utf8            => 0,
-        pretty          => 0,
-        indent          => 0,
-        canonical       => 1,
-        allow_stringify => 1,
-    );
+    my $serializer = Cpanel::JSON::XS->new
+                                     ->utf8(0)
+                                     ->pretty(0)
+                                     ->indent(0)
+                                     ->canonical(1)
+                                     ->allow_stringify(1);
 
     return $serializer->encode( \%log_entry );
 }
