@@ -2,6 +2,8 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+1.15      2021-06-05 19:43:37-04:00 America/New_York
+
   - Update test dependencies
 
 1.14      2021-06-05 14:37:03-04:00 America/New_York
