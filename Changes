@@ -1,6 +1,6 @@
 Changes file for Log::Any::Adapter::JSON
 
-- Use allow_stringify option to serializer to support scalar refs (eg from logging SQL commands)
+  - Use allow_stringify option to serializer to support scalar refs (eg from logging SQL commands)
 
 {{$NEXT}}
 
