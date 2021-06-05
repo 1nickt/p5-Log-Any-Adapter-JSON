@@ -129,10 +129,11 @@ sub _prepare_log_entry {
     }
 
     my $serializer = JSON::MaybeXS->new(
-        utf8      => 0,
-        pretty    => 0,
-        indent    => 0,
-        canonical => 1,
+        utf8            => 0,
+        pretty          => 0,
+        indent          => 0,
+        canonical       => 1,
+        allow_stringify => 1,
     );
 
     return $serializer->encode( \%log_entry );
