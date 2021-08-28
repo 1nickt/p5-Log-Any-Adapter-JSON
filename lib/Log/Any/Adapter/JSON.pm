@@ -71,9 +71,9 @@ sub _prepare_log_entry {
     $float .= 0 while length $float < 7;
 
     my %log_entry = (
-        time     => join('', $time->strftime('%FT%T'), $float, $time->strftime('%Z')),
-        level    => $level,
-        category => $category,
+        timestamp => join('', $time->strftime('%FT%T'), $float, $time->strftime('%Z')),
+        level     => $level,
+        category  => $category,
     );
 
     # Process pattern and values if present, unless not wanted
