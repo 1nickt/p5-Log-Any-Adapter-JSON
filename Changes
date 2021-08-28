@@ -2,6 +2,8 @@ Changes file for Log::Any::Adapter::JSON
 
 {{$NEXT}}
 
+1.16      2021-08-28 16:21:52-04:00 America/New_York
+
   - Rename logged key to timestamp
 
 1.15      2021-06-05 19:43:37-04:00 America/New_York
